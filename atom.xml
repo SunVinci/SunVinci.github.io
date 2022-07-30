@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>SunVinci.github.io</id>
+    <title>SunVinci</title>
+    <updated>2022-07-30T06:49:18.411Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="SunVinci.github.io"/>
+    <link rel="self" href="SunVinci.github.io/atom.xml"/>
+    <subtitle>所谓，大道至简。。。</subtitle>
+    <rights>All rights reserved 2022, SunVinci</rights>
+    <entry>
+        <title type="html"><![CDATA[2022.7.7]]></title>
+        <id>https://SunVinci.github.io/202277</id>
+        <link href="https://SunVinci.github.io/202277"/>
+        <updated>2022-07-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[记录一下放假读过的书：
+1.《蟠虺》刘醒龙
+2.《沧海孤鸿》王刚
+3.《陆离记》三月初
+4.《大宋风月·王安石》高有鹏
+5.《火星孤儿》刘洋
+6.《鹤唳华亭》雪满梁园
+]]></summary>
+        <content type="html"><![CDATA[<p>记录一下放假读过的书：<br>
+1.《蟠虺》刘醒龙<br>
+2.《沧海孤鸿》王刚<br>
+3.《陆离记》三月初<br>
+4.《大宋风月·王安石》高有鹏<br>
+5.《火星孤儿》刘洋<br>
+6.《鹤唳华亭》雪满梁园</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[凸包]]></title>
+        <id>https://SunVinci.github.io/tu-bao</id>
+        <link href="https://SunVinci.github.io/tu-bao"/>
+        <updated>2022-06-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[                               2022.6.21  于巷里
+
+平面凸包是指覆盖平面上n个点的最小的凸多边形。
+板子：https://www.luogu.com.cn/problem/P2742
+Graham：...]]></summary>
+        <content type="html"><![CDATA[<pre><code>                               2022.6.21  于巷里
+</code></pre>
+<p>平面凸包是指覆盖平面上n个点的最小的凸多边形。<br>
+板子：https://www.luogu.com.cn/problem/P2742<br>
+Graham：<br>
+1.对点集进行排序。我们选择一个y值最小（如有相同选x最小）的点，记为p1<br>
+剩下的点集中按照极角的大小逆时针排序，然后编号为p2~pm。<br>
+2.我们按照排序结束时的顺序枚举每一个点，依次连线，这里可以使用一个栈来存储，每次入栈，如果即将入栈的元素与栈顶两个元素所构成了一个类似于凹壳的东西，那么显然处于顶点的那个点一定不在这个点集的凸包上，而他正在栈顶，所以把它弹出栈，新点入栈。</p>
+<p>~排序时按外积判方向：<br>
+叉乘 a=(m,n) b=(p,q) ，则a*b=mq-np<br>
+若b在a逆时针方向则值为正，顺时针方向则值为负。</p>
+<p>最新一次提交正确。</p>
+<p>另一道：https://www.luogu.com.cn/problem/P3829</p>
+<p>Andrew：<br>
+1.按照x优先的顺序排序（坐标从小到大），x相同按y从小到大。<br>
+2.从第一个点开始遍历，如果下一个点在栈顶的两个元素所连成直线的左边，那么就入栈；<br>
+否则如果在右边，说明凸包有更优的方案，上次的点出栈，并直到新点在栈顶两个点所在的直线的左边为止。<br>
+（分成上凸包和下凸包求）<br>
+（考虑凸包退化成直线的情况，数组开2倍以上）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷p4550（期望dp）]]></title>
+        <id>https://SunVinci.github.io/luo-gup4550-qi-wangdp</id>
+        <link href="https://SunVinci.github.io/luo-gup4550-qi-wangdp"/>
+        <updated>2022-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[https://www.luogu.com.cn/problem/P4550
+每次价格和已买次数有关，所以先试着求次数期望。
+设f[i]表示已经取到i种邮票，取到所有的所需的次数期望。
+对于当前次，有i/n的概率取到已有的，（n-i）/n的...]]></summary>
+        <content type="html"><![CDATA[<p>https://www.luogu.com.cn/problem/P4550<br>
+每次价格和已买次数有关，所以先试着求次数期望。</p>
+<p>设f[i]表示已经取到i种邮票，取到所有的所需的次数期望。<br>
+对于当前次，有i/n的概率取到已有的，（n-i）/n的概率取到新的。<br>
+f[i]=i/n*(f[i]+1)+(n-i)/n*(f[i+1]+1)<br>
+化简得f[i]=f[i+1]+n/(n-i)</p>
+<p>设g[i]表示已经取到i种邮票，取到所有的所需的价格期望。<br>
+对于当前次，有i/n的概率取到已有的，（n-i）/n的概率取到新的。<br>
+g[i]=i/n*(g[i]+f[i]+1)+(n-i)/n*(g[i+1]+f[i+1]+1)<br>
+注意，这里当前次用的价格是从后面开始计数的。<br>
+化简得g[i]=i/(n-i)*f[i]+g[i+1]+f[i+1]+n/(n-i)</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷p1654(期望dp)]]></title>
+        <id>https://SunVinci.github.io/luo-gup1654-qi-wangdp</id>
+        <link href="https://SunVinci.github.io/luo-gup1654-qi-wangdp"/>
+        <updated>2022-05-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[https://www.luogu.com.cn/problem/P1654
+刚开始看到无从下手的一题，因为即使是分开考虑，当前位还是会和前一位有关系，并且不是线性的那种关系。
+我们可以观察到每次对答案的贡献是三次方级别的。那从一次方开始考...]]></summary>
+        <content type="html"><![CDATA[<p>https://www.luogu.com.cn/problem/P1654<br>
+刚开始看到无从下手的一题，因为即使是分开考虑，当前位还是会和前一位有关系，并且不是线性的那种关系。</p>
+<p>我们可以观察到每次对答案的贡献是三次方级别的。那从一次方开始考虑。<br>
+1.<br>
+设a[i]表示前i位长度的期望（第i位为1）<br>
+a[i]=(a[i-1]+1)*p[i] (前面的期望长度加上当前位的1)<br>
+（其实是连续一段的长度期望，例如100111在这里长度算作3）</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>设b[i]表示前i位长度平方的期望（第i位为1）<br>
+b[i]=(b[i−1]+2×a[i−1]+1)×p[i]</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>设f[i]表示前i位长度立方的期望(第i位为1)<br>
+f[i]=(f[i−1]+3×b[i−1]+3×a[i−1]+1)×p[i]<br>
+这里，我们都是强制令当前位一定为1，加入考虑不为1的情况，<br>
+f[i]变为得分期望，即<br>
+f[i]=f[i−1]+(3×b[i−1]+3×a[i−1]+1)×p[i]</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷4316（概率期望/期望dp）]]></title>
+        <id>https://SunVinci.github.io/luo-gu4316-gai-lu-qi-wang-qi-wangdp</id>
+        <link href="https://SunVinci.github.io/luo-gu4316-gai-lu-qi-wang-qi-wangdp"/>
+        <updated>2022-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[https://www.luogu.com.cn/problem/P4316
+法一（直接求）：
+还是按照一贯的思路，分开考虑，即每一条边对结果的贡献。则所求“从起点走到终点的所经过的路径总长度期望”就是∑w[i]*f[i],w[i]为第i条...]]></summary>
+        <content type="html"><![CDATA[<p>https://www.luogu.com.cn/problem/P4316<br>
+法一（直接求）：<br>
+还是按照一贯的思路，分开考虑，即每一条边对结果的贡献。则所求“从起点走到终点的所经过的路径总长度期望”就是∑w[i]*f[i],w[i]为第i条边边权，f[i]为经过该边的概率，或者说期望次数。<br>
+现在问题集中到求经过每条边的概率，f[i]=p[x]/out[x],out[x]为点x的出度，p[x]为到达点x的概率，边i当然就是x的一条出边了。至于求p[x],可以从前面继承，即抵达x的所有边的概率之和。<br>
+我们知道p[1]=1,由起点开始以拓扑序进行求解（求所有的f[i]），记出度和入度用队列维护一下即可。</p>
+<p>法二（期望dp）：<br>
+逆推，f[x]=(1/out[x])*∑(w[i]+f[y]),这里x到y的边为i，f[x]为从x点到终点的总路程期望，out[x]为点x的出度，w[i]为边i的边权。显然，f[n]=0。<br>
+具体实现时为了方便，我们反向连边，out[x]仍指x的出度（用于计算），in[x]也指x的出度，每次操作后减1，减到0说明f[x]已经计算好了，入队用x继续更新前面的（可以看出，我们仍遵从拓扑序，只不过是从终点开始的）。最后直接输出f[1]即可。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷p3802(概率期望)]]></title>
+        <id>https://SunVinci.github.io/luo-gup3802-gai-lu-qi-wang</id>
+        <link href="https://SunVinci.github.io/luo-gup3802-gai-lu-qi-wang"/>
+        <updated>2022-04-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[https://www.luogu.com.cn/problem/P3802
+30% S=∑ai 总方案为S！，dfs后逐个判断即可（注意，每次施放魔法时，会等概率随机消耗一个现有的能量晶体，所以会这样）
+100% 题解1里详细了。
+总结：...]]></summary>
+        <content type="html"><![CDATA[<p>https://www.luogu.com.cn/problem/P3802<br>
+30% S=∑ai 总方案为S！，dfs后逐个判断即可（注意，每次施放魔法时，会等概率随机消耗一个现有的能量晶体，所以会这样）<br>
+100% 题解1里详细了。</p>
+<p>总结：所有的情况考虑起来太复杂，所以每7位考虑，且是分别考虑每7位对答案的贡献（0或1），若考虑和为1，2，3，……，S-6的概率就没有分步的意义了。重要的是找性质，2到8位的情况必须考虑第一位的情况，但1到7位如何这里不重要，单独看2到8位，而不是累积在一起。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷p1297（概率期望）]]></title>
+        <id>https://SunVinci.github.io/luo-gup1297-gai-lu-qi-wang</id>
+        <link href="https://SunVinci.github.io/luo-gup1297-gai-lu-qi-wang"/>
+        <updated>2022-04-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[https://www.luogu.com.cn/problem/P1297
+没看题解，自己做的！
+虽然是简单题。。。
+还是分开考虑每一题的贡献，发现做对Ti的概率为1/a[i]*(1/a[i-1])*min(a[i],a[i-1])
+然后...]]></summary>
+        <content type="html"><![CDATA[<p>https://www.luogu.com.cn/problem/P1297<br>
+没看题解，自己做的！<br>
+虽然是简单题。。。<br>
+还是分开考虑每一题的贡献，发现做对Ti的概率为1/a[i]*(1/a[i-1])*min(a[i],a[i-1])<br>
+然后累加每一题的贡献就成了。</p>
+<p>ps 五一复习课内知识，再学点这个，蓝桥杯真是一坨屎。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[icpc昆明游记]]></title>
+        <id>https://SunVinci.github.io/icpc-kun-ming-you-ji</id>
+        <link href="https://SunVinci.github.io/icpc-kun-ming-you-ji"/>
+        <updated>2022-04-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[签到题打表猜结论，wa一次后手推了个不用加特判的通解，但队友没理我，又交了一发不行才听我说话，加上这罚时就铜了。。。
+作为翻译官，又开了道树形dp，和队友讨论讨论，发现可写，第一发wa了，然后再读题，负数没考虑，再交ac了。我自认为思路可以...]]></summary>
+        <content type="html"><![CDATA[<p>签到题打表猜结论，wa一次后手推了个不用加特判的通解，但队友没理我，又交了一发不行才听我说话，加上这罚时就铜了。。。<br>
+作为翻译官，又开了道树形dp，和队友讨论讨论，发现可写，第一发wa了，然后再读题，负数没考虑，再交ac了。我自认为思路可以，但码力不行，就从这题能看出来。。。我是万万不敢动手敲的，没想到最后还给他弄成了。。。<br>
+之后的构造题，也是最大的遗憾，0的情况一直输-1，没再多想。当时队友对着暴力乱输我还很不屑，事后想想，就是乱输才能碰到0的情况，反正让我想我是想不到。。。90min都没搞定这点，不让加上面的罚时tm就银了。。。<br>
+多练练吧，cf上的构造题，还有这次频繁出现的概率题。。。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[4.11]]></title>
+        <id>https://SunVinci.github.io/411</id>
+        <link href="https://SunVinci.github.io/411"/>
+        <updated>2022-04-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[学期过半了，似大梦初醒，这段时间过得太快活了，不知不觉中蹉跎。
+你看，有那么多事可以干，比如，学学编程，背背诗，学学英语，写写文章，运动什么的。。。
+或者再多学点课外的东西，搞学校的课程实在没意思，花时间多了不值，不搞又担心分。。。
+但总结...]]></summary>
+        <content type="html"><![CDATA[<p>学期过半了，似大梦初醒，这段时间过得太快活了，不知不觉中蹉跎。<br>
+你看，有那么多事可以干，比如，学学编程，背背诗，学学英语，写写文章，运动什么的。。。<br>
+或者再多学点课外的东西，搞学校的课程实在没意思，花时间多了不值，不搞又担心分。。。<br>
+但总结下来，做游戏也比打游戏好，真是气人，玩不出来名堂。<br>
+好吧，以此为志，暂且立下。</p>
+<p>今日蓝桥杯又烂了，马上还有ccpc，寝室果然不大适合学编程。。。<br>
+什么时候解封呀！图书馆又借不了书，自习室现在又人多，不想去挤，精神极度匮乏。<br>
+多意淫意淫罢。。。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[3.21]]></title>
+        <id>https://SunVinci.github.io/321</id>
+        <link href="https://SunVinci.github.io/321"/>
+        <updated>2022-03-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[疫情封校了这么多天，心绪颇不宁静。
+浮生旧梦旧事浮现，但往事已不可追。
+嗯，还是要好好学习。
+哎，挑来选去，也就小小的爱好了，但弄acm还是少有往日睥睨之势，烦心。
+操蛋，疫情之后要出去放纵一把。
+...]]></summary>
+        <content type="html"><![CDATA[<p>疫情封校了这么多天，心绪颇不宁静。<br>
+浮生旧梦旧事浮现，但往事已不可追。<br>
+嗯，还是要好好学习。<br>
+哎，挑来选去，也就小小的爱好了，但弄acm还是少有往日睥睨之势，烦心。<br>
+操蛋，疫情之后要出去放纵一把。</p>
+]]></content>
+    </entry>
+</feed>

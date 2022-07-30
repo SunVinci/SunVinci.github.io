@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>icpc昆明游记 - SunVinci</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="SunVinci - Atom Feed" href="https://SunVinci.github.io/atom.xml">
+
+  
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/C6Ock64SP');
+    ga('set', 'dimension2', 'post/nS6mOpsCd');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/C6Ock64SP',
+    //   'postId': 'post/nS6mOpsCd',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="签到题打表猜结论，wa一次后手推了个不用加特判的通解，但队友没理我，又交了一发不行才听我说话，加上这罚时就铜了。。。
+作为翻译官，又开了道树形dp，和队友讨论讨论，发现可写，第一发wa了，然后再读题，负数没考虑，再交ac了。我自认为思路可以...">
+
+  <meta property="og:title" content="icpc昆明游记 - SunVinci">
+  <meta property="og:description" content="签到题打表猜结论，wa一次后手推了个不用加特判的通解，但队友没理我，又交了一发不行才听我说话，加上这罚时就铜了。。。
+作为翻译官，又开了道树形dp，和队友讨论讨论，发现可写，第一发wa了，然后再读题，负数没考虑，再交ac了。我自认为思路可以...">
+  
+  <meta property="og:url" content="https://SunVinci.github.io/icpc-kun-ming-you-ji/">
+  <meta property="og:site_name" content="SunVinci">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="icpc昆明游记">
+
+  <meta name="gridea:post_id" content="nS6mOpsCd">
+
+  <link rel="canonical" href="https://SunVinci.github.io/icpc-kun-ming-you-ji">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">S</div>
+      <a href="/">SunVinci</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">icpc昆明游记</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.04.18</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://SunVinci.github.io/tags/" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>浅唱低吟，窸窣絮语
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>签到题打表猜结论，wa一次后手推了个不用加特判的通解，但队友没理我，又交了一发不行才听我说话，加上这罚时就铜了。。。<br>
+作为翻译官，又开了道树形dp，和队友讨论讨论，发现可写，第一发wa了，然后再读题，负数没考虑，再交ac了。我自认为思路可以，但码力不行，就从这题能看出来。。。我是万万不敢动手敲的，没想到最后还给他弄成了。。。<br>
+之后的构造题，也是最大的遗憾，0的情况一直输-1，没再多想。当时队友对着暴力乱输我还很不屑，事后想想，就是乱输才能碰到0的情况，反正让我想我是想不到。。。90min都没搞定这点，不让加上面的罚时tm就银了。。。<br>
+多练练吧，cf上的构造题，还有这次频繁出现的概率题。。。</p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.04.18</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>
