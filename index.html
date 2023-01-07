@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunVinci</title>
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="SunVinci - Atom Feed" href="https://SunVinci.github.io/atom.xml">
+
+  
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/C6Ock64SP');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/C6Ock64SP',
+    // });
+  </script>
+
+
+
+
+  <meta name="description" content="所谓，大道至简。。。">
+  
+  <meta property="og:title" content="SunVinci">
+  <meta property="og:description" content="所谓，大道至简。。。">
+  <meta property="og:url" content="https://SunVinci.github.io">
+  <meta property="og:site_name" content="SunVinci">
+
+  <link rel="canonical" href="https://SunVinci.github.io">
+
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">S</div>
+      <a href="/">SunVinci</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      
+        <div class="max-w-2xl mx-auto md:px-2 px-4">
+          <div class="my-24">
+            <h1 class="text-xl py-4 text-center">所谓，大道至简。。。</h1>
+          </div>
+        </div>
+      
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="w-full relative bg-white py-16">
+      <div class="max-w-2xl mx-auto">
+        <div>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.12.15</div>
+      <a href="https://SunVinci.github.io/20221215" class="post-item"><h2 class="text-2xl post-title leading-tight">2022.12.15</h2></a>
+      <div class="mt-4">记录一下寒假读过的书：
+1.《蚁群》汤问棘
+2.《长安惊云》风吟
+3.《恶脑》龙伟平
+4.《终朝煮茶，七碗生风》叶梓
+</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.12.15</div>
+      <a href="https://SunVinci.github.io/cf1750-rong-chi" class="post-item"><h2 class="text-2xl post-title leading-tight">cf1750（容斥）</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/CF1750D
+发现a[i-1]一定要是a[i]的倍数才有解。
+然后考虑每一位对答案的贡献，
+前一位是a[i-1],当前位是a[i],令d=a[i-1]/a[i],只要当前位...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.10.31</div>
+      <a href="https://SunVinci.github.io/ccpc-gui-lin-you-ji" class="post-item"><h2 class="text-2xl post-title leading-tight">ccpc桂林游记</h2></a>
+      <div class="mt-4">我们学校桂林站有4个名额，就报了3个，就当练练手了，为icpc做准备。
+周六的热身赛，大家都在认真做题，我们队开摆了，去了20min就回来干自己的事了。
+2022.10.30
+正式赛9点开始，又赶上大一项目答辩，8点就到了。我去协调让我们队...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.10.17</div>
+      <a href="https://SunVinci.github.io/luo-gup8539" class="post-item"><h2 class="text-2xl post-title leading-tight">洛谷p8539</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/P8539
+比较困难的一题
+首先，发现：每次操作选择的值一定会构成一些公差为v的等差数列（注意是一些，就是这样的等差数列可能有很多个），且后一个等差数列首项-前一个等差数列末...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.10.12</div>
+      <a href="https://SunVinci.github.io/2022-guo-sai-you-ji" class="post-item"><h2 class="text-2xl post-title leading-tight">2022国赛游记</h2></a>
+      <div class="mt-4">第一次建模国赛，省一。
+算是意外之喜，过程比较坎坷。
+一开始是在小蜗看到两个经管前3%找队友，就去了。本来想随便水水，结果他们经管那边又培训又有练习的，比较影响我正常的计划。。。本来准备专心搞acm，但一系列变故导致不能一棵树上吊死。。。
+...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.09.13</div>
+      <a href="https://SunVinci.github.io/emo" class="post-item"><h2 class="text-2xl post-title leading-tight">emo</h2></a>
+      <div class="mt-4">感觉越学越难，现在做的题目已经超过我的水平很多。
+基本情况是先读题思考一段时间，可能会有灵光乍现的情况，但转瞬即逝，有时也难以向正确的方向深思，通常都是无果。然后看题解，这很考验耐心，之前知识点没有完全掌握时总是得过且过，想着学过知识点再来...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.09.08</div>
+      <a href="https://SunVinci.github.io/jin-ri-xiao-ji" class="post-item"><h2 class="text-2xl post-title leading-tight">  今日小记</h2></a>
+      <div class="mt-4">下周比较忙。
+一场icpc网络赛。之前的队友跑了，倒不是三人队没他不行，只是觉得做了一年的队友，曾经一起努力，一起憧憬，结果突然就这样撂下摊子，留下我们又要重新组队，又要重新磨合。人总想往高出走，所以比我们更强的人找他他走了，都是自己的选择...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.07.07</div>
+      <a href="https://SunVinci.github.io/202277" class="post-item"><h2 class="text-2xl post-title leading-tight">2022.7.7</h2></a>
+      <div class="mt-4">记录一下放假读过的书：
+1.《蟠虺》刘醒龙
+2.《沧海孤鸿》王刚
+3.《陆离记》三月初
+4.《大宋风月·王安石》高有鹏
+5.《火星孤儿》刘洋
+6.《鹤唳华亭》雪满梁园
+7.《阴阳钟》佚名
+8.《伉俪英雄传》霍若超
+9.《超级生物》金子息
+1...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.06.21</div>
+      <a href="https://SunVinci.github.io/tu-bao" class="post-item"><h2 class="text-2xl post-title leading-tight">凸包</h2></a>
+      <div class="mt-4">                               2022.6.21  于巷里
+
+平面凸包是指覆盖平面上n个点的最小的凸多边形。
+板子：https://www.luogu.com.cn/problem/P2742
+Graham：...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.05.06</div>
+      <a href="https://SunVinci.github.io/luo-gup4550-qi-wangdp" class="post-item"><h2 class="text-2xl post-title leading-tight">洛谷p4550（期望dp）</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/P4550
+每次价格和已买次数有关，所以先试着求次数期望。
+设f[i]表示已经取到i种邮票，取到所有的所需的次数期望。
+对于当前次，有i/n的概率取到已有的，（n-i）/n的...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.05.04</div>
+      <a href="https://SunVinci.github.io/luo-gup1654-qi-wangdp" class="post-item"><h2 class="text-2xl post-title leading-tight">洛谷p1654(期望dp)</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/P1654
+刚开始看到无从下手的一题，因为即使是分开考虑，当前位还是会和前一位有关系，并且不是线性的那种关系。
+我们可以观察到每次对答案的贡献是三次方级别的。那从一次方开始考...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.05.02</div>
+      <a href="https://SunVinci.github.io/luo-gu4316-gai-lu-qi-wang-qi-wangdp" class="post-item"><h2 class="text-2xl post-title leading-tight">洛谷4316（概率期望/期望dp）</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/P4316
+法一（直接求）：
+还是按照一贯的思路，分开考虑，即每一条边对结果的贡献。则所求“从起点走到终点的所经过的路径总长度期望”就是∑w[i]*f[i],w[i]为第i条...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.04.30</div>
+      <a href="https://SunVinci.github.io/luo-gup3802-gai-lu-qi-wang" class="post-item"><h2 class="text-2xl post-title leading-tight">洛谷p3802(概率期望)</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/P3802
+30% S=∑ai 总方案为S！，dfs后逐个判断即可（注意，每次施放魔法时，会等概率随机消耗一个现有的能量晶体，所以会这样）
+100% 题解1里详细了。
+总结：...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.04.30</div>
+      <a href="https://SunVinci.github.io/luo-gup1297-gai-lu-qi-wang" class="post-item"><h2 class="text-2xl post-title leading-tight">洛谷p1297（概率期望）</h2></a>
+      <div class="mt-4">https://www.luogu.com.cn/problem/P1297
+没看题解，自己做的！
+虽然是简单题。。。
+还是分开考虑每一题的贡献，发现做对Ti的概率为1/a[i]*(1/a[i-1])*min(a[i],a[i-1])
+然后...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.04.18</div>
+      <a href="https://SunVinci.github.io/icpc-kun-ming-you-ji" class="post-item"><h2 class="text-2xl post-title leading-tight">icpc昆明游记</h2></a>
+      <div class="mt-4">签到题打表猜结论，wa一次后手推了个不用加特判的通解，但队友没理我，又交了一发不行才听我说话，加上这罚时就铜了。。。
+作为翻译官，又开了道树形dp，和队友讨论讨论，发现可写，第一发wa了，然后再读题，负数没考虑，再交ac了。我自认为思路可以...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.04.11</div>
+      <a href="https://SunVinci.github.io/411" class="post-item"><h2 class="text-2xl post-title leading-tight">4.11</h2></a>
+      <div class="mt-4">学期过半了，似大梦初醒，这段时间过得太快活了，不知不觉中蹉跎。
+你看，有那么多事可以干，比如，学学编程，背背诗，学学英语，写写文章，运动什么的。。。
+或者再多学点课外的东西，搞学校的课程实在没意思，花时间多了不值，不搞又担心分。。。
+但总结...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.03.21</div>
+      <a href="https://SunVinci.github.io/321" class="post-item"><h2 class="text-2xl post-title leading-tight">3.21</h2></a>
+      <div class="mt-4">疫情封校了这么多天，心绪颇不宁静。
+浮生旧梦旧事浮现，但往事已不可追。
+嗯，还是要好好学习。
+哎，挑来选去，也就小小的爱好了，但弄acm还是少有往日睥睨之势，烦心。
+操蛋，疫情之后要出去放纵一把。
+...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.01.13</div>
+      <a href="https://SunVinci.github.io/chen-feng" class="post-item"><h2 class="text-2xl post-title leading-tight">晨风</h2></a>
+      <div class="mt-4">鴥彼晨风，郁彼北林。（yu）
+未见君子，忧心钦钦。(钦钦 忧愁)
+如何如何，忘我实多！
+山有苞栎，山有苞栎。
+未见君子，忧心靡乐。
+如何如何，忘我实多！
+山有苞棣，隰有树檖。
+未见君子，忧心如醉。
+如何如何，忘我实多！
+《毛诗序》持“刺秦康...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.01.12</div>
+      <a href="https://SunVinci.github.io/zao-wan-xin" class="post-item"><h2 class="text-2xl post-title leading-tight">早晚信</h2></a>
+      <div class="mt-4">                                    不才
+
+又是一首单曲循环。
+“见展信首行即夜安 旧经典
+小饰我不俗浪漫 提醒你远灯一盏思恹恹
+今次拟与叙新篇 游园”
+向往古人，远行之前一封来自心上人的信笺，展信佳，见...</div>
+    </article>
+  
+    <article class="mb-8 bg-white px-4 md:px-2 py-8 rounded-md">
+      <div class="text-gray-400 mb-4">2022.01.11</div>
+      <a href="https://SunVinci.github.io/juan-er" class="post-item"><h2 class="text-2xl post-title leading-tight">卷耳</h2></a>
+      <div class="mt-4">采采卷耳，不盈顷筐。
+嗟我怀人，寘彼周行。（zhi）（置）
+陟彼崔嵬，我马虺隤。（hui tui）（疲极而病）
+我姑酌彼金罍，维以不永怀。
+陟彼高冈，我马玄黄。
+我姑酌彼兕觥，维以不永伤。（si）
+陟彼砠矣，我马瘏矣。（ju）（有土的石山）...</div>
+    </article>
+  
+</div>
+        <div class="px-2 flex justify-between">
+          
+            <div></div>
+          
+          
+            <a href="/page/2/" class="border-b border-transparent hover:border-black">下一页</a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  
+    
+  
+</body>
+</html>
